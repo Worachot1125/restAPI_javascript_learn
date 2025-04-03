@@ -1,0 +1,88 @@
+        /* สิ่งที่อยู่ตรงนี้ จะมีไว้แค่ dev อ่าน */
+
+        body {
+            font-family: 'Noto_Sans_Thai';
+            background-color: rgb(128, 228, 233);
+        }
+
+        .container {
+            width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: rgb(128, 228, 233);
+        }
+
+        .form {
+            margin-right: 30px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+
+        .input-box {
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+        }
+
+        .header {
+            text-align: center;
+            font-size: 30px;
+            margin-top: 50px;
+            margin-bottom: 20px;
+            background-color: rgb(128, 228, 233);
+        }
+
+        .gender {
+            display: flex;
+            justify-content: center;
+        }
+
+        .checkbox {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .header-form {
+            font-weight: 800;
+            font-size: 15px;
+            margin-bottom: 10px;
+            margin-left: 10px;
+        }
+
+        .form-textarea {
+            margin-left: 4px;
+            border-radius: 5px;
+        }
+
+        .submit-button {
+            margin-left: 20%;
+            border: 0;
+            width: 60%;
+            height: 50px;
+            background-color: #150846;
+        }
+
+        .message {
+            background-color: rgb(59, 123, 123);
+            padding: 10px;
+            margin-bottom: 10px;
+            display: none;
+        }
+
+        .message.success {
+            background-color: #4CAF50;
+            display: block;
+        }
+
+        .message.danger {
+            background-color: #f44336;
+            display: block;
+
+        }
+
+        .submit-button:hover {
+            background-color: #455aa0;
+        }
+
+        .submit-button:active {
+            background-color: #1d147d;
+        }

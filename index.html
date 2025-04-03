@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!--ส่วนที่ไม่แสดงออกไปในหน้าจอ Browser -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TestWeb</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+
+<body>
+    <!--ส่วนที่แสดงออกไปในหน้าจอ Browser -->
+    <!-- form -->
+    <a href="user.html">Go to user management</a>
+    <div class="container">
+        <div class="header">Register form</div>
+        <div class="input-box">
+            <div class="header-form">ชื่อ</div>
+            <input class="form" name="firstname" type="text" placeholder="firstname">
+        </div>
+        <div class="input-box">
+            <div class="header-form">นามสกุล</div>
+            <input class="form" name="lastname" type="text" placeholder="lastname">
+        </div>
+        <div class="input-box">
+            <div class="header-form">อายุ</div>
+            <input class="form" name="age" type="number" placeholder="age" min="0" max="100">
+        </div>
+        <div>
+            <span class="header-form">เพศ</span>
+            <div class="gender">
+                <div>
+                    <input type="radio" name="gender" value="ชาย"> ชาย
+                </div>
+                <div>
+                    <input type="radio" name="gender" value="หญิง"> หญิง
+                </div>
+                <div>
+                    <input type="radio" name="gender" value="ไม่ระบุ">ไม่ระบุ
+                </div>
+            </div>
+            <div>
+                <div class="header-form">สิ่งที่สนใจ</div>
+                <div class="checkbox">
+                    <div>
+                        <input type="checkbox" name="interests" value="หนังสือ"> หนังสือ
+                    </div>
+                    <div>
+                        <input type="checkbox" name="interests" value="เกม"> เกม
+                    </div>
+                    <div>
+                        <input type="checkbox" name="interests" value="การเมือง"> การเมือง
+                    </div>
+                    <div>
+                        <input type="checkbox" name="interests" value="อาหาร"> อาหาร
+                    </div>
+                    <div>
+                        <input type="checkbox" name="interests" value="การเงิน"> การเงิน
+                    </div>
+                    <div>
+                        <input type="checkbox" name="interests" value="แฟชั่น"> แฟชั่น
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="header-form">คำอธิบายเพิ่มเติม</div>
+                <div>
+                    <textarea class="form-textarea" name="comment" row="2" cols="50"></textarea>
+                </div>
+            </div>
+            <a href="https://shopee.co.th/" target="_blank">T&C</a>
+            <div>
+                <div id="message" class="message"></div>
+                <button onclick="submitData()" class="submit-button">Submit</button>
+            </div>
+
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+        <script src="inede.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,161 @@
+from PyQt5 import QtCore, QtGui, QtWidgets
+import pickle
+
+
+
+with open('iris_DT_model.pkl', 'rb') as f:  # 'rb' for reading in binary mode
+            model = pickle.load(f)
+class Ui_MainWindow(object):
+    def setupUi(self, MainWindow):
+        MainWindow.setObjectName("MainWindow")
+        MainWindow.resize(800, 600)
+        self.centralwidget = QtWidgets.QWidget(MainWindow)
+        self.centralwidget.setObjectName("centralwidget")
+        self.label = QtWidgets.QLabel(self.centralwidget)
+        self.label.setGeometry(QtCore.QRect(80, 20, 631, 61))
+        font = QtGui.QFont()
+        font.setFamily("Lucida Handwriting")
+        font.setPointSize(28)
+        self.label.setFont(font)
+        self.label.setObjectName("label")
+        self.label_2 = QtWidgets.QLabel(self.centralwidget)
+        self.label_2.setGeometry(QtCore.QRect(110, 110, 161, 51))
+        font = QtGui.QFont()
+        font.setFamily("Lucida Handwriting")
+        font.setPointSize(18)
+        font.setBold(False)
+        font.setWeight(50)
+        self.label_2.setFont(font)
+        self.label_2.setObjectName("label_2")
+
+        self.textSepalWidth = QtWidgets.QTextEdit(self.centralwidget)
+        self.textSepalWidth.setGeometry(QtCore.QRect(290, 110, 311, 51))
+        font = QtGui.QFont()
+        font.setFamily("Lucida Handwriting")
+        font.setPointSize(12)
+
+        self.textSepalWidth.setFont(font)
+        self.textSepalWidth.setObjectName("textSepalWidth")
+        self.textPetalHeight = QtWidgets.QTextEdit(self.centralwidget)
+        self.textPetalHeight.setGeometry(QtCore.QRect(290, 290, 311, 51))
+        font = QtGui.QFont()
+        font.setFamily("Lucida Handwriting")
+        font.setPointSize(12)
+        self.textPetalHeight.setFont(font)
+        self.textPetalHeight.setObjectName("textPetalHeight")
+        self.label_4 = QtWidgets.QLabel(self.centralwidget)
+        self.label_4.setGeometry(QtCore.QRect(110, 290, 161, 51))
+        font = QtGui.QFont()
+        font.setFamily("Lucida Handwriting")
+        font.setPointSize(18)
+        font.setBold(False)
+        font.setWeight(50)
+        self.label_4.setFont(font)
+        self.label_4.setObjectName("label_4")
+        self.textPetalWidth = QtWidgets.QTextEdit(self.centralwidget)
+        self.textPetalWidth.setGeometry(QtCore.QRect(290, 230, 311, 51))
+        font = QtGui.QFont()
+        font.setFamily("Lucida Handwriting")
+        font.setPointSize(12)
+        self.textPetalWidth.setFont(font)
+        self.textPetalWidth.setObjectName("textPetalWidth")
+        self.label_5 = QtWidgets.QLabel(self.centralwidget)
+        self.label_5.setGeometry(QtCore.QRect(110, 230, 161, 51))
+        font = QtGui.QFont()
+        font.setFamily("Lucida Handwriting")
+        font.setPointSize(18)
+        font.setBold(False)
+        font.setWeight(50)
+        self.label_5.setFont(font)
+        self.label_5.setObjectName("label_5")
+        self.textSepalHeight = QtWidgets.QTextEdit(self.centralwidget)
+        self.textSepalHeight.setGeometry(QtCore.QRect(290, 170, 311, 51))
+        font = QtGui.QFont()
+        font.setFamily("Lucida Handwriting")
+        font.setPointSize(12)
+        self.textSepalHeight.setFont(font)
+        self.textSepalHeight.setObjectName("textSepalHeight")
+        self.label_6 = QtWidgets.QLabel(self.centralwidget)
+        self.label_6.setGeometry(QtCore.QRect(110, 170, 161, 51))
+        font = QtGui.QFont()
+        font.setFamily("Lucida Handwriting")
+        font.setPointSize(18)
+        font.setBold(False)
+        font.setWeight(50)
+        self.label_6.setFont(font)
+        self.label_6.setObjectName("label_6")
+
+        self.buttonPredict = QtWidgets.QPushButton(self.centralwidget)
+        self.buttonPredict.setGeometry(QtCore.QRect(340, 370, 141, 41))
+        font = QtGui.QFont()
+        font.setFamily("Lucida Handwriting")
+        font.setPointSize(12)
+        self.buttonPredict.setFont(font)
+        self.buttonPredict.setObjectName("buttonPredict")
+        self.buttonPredict.clicked.connect(self.buttonPredict_clicked) 
+
+        self.label_7 = QtWidgets.QLabel(self.centralwidget)
+        self.label_7.setGeometry(QtCore.QRect(100, 440, 161, 51))
+        font = QtGui.QFont()
+        font.setFamily("Lucida Handwriting")
+        font.setPointSize(18)
+        font.setBold(False)
+        font.setWeight(50)
+        self.label_7.setFont(font)
+        self.label_7.setObjectName("label_7")
+
+        self.textResult = QtWidgets.QTextEdit(self.centralwidget)
+        self.textResult.setGeometry(QtCore.QRect(280, 440, 311, 51))
+        font = QtGui.QFont()
+        font.setFamily("Lucida Handwriting")
+        font.setPointSize(12)
+
+        self.textResult.setFont(font)
+        self.textResult.setObjectName("textResult")
+        MainWindow.setCentralWidget(self.centralwidget)
+        self.menubar = QtWidgets.QMenuBar(MainWindow)
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 21))
+        self.menubar.setObjectName("menubar")
+        MainWindow.setMenuBar(self.menubar)
+        self.statusbar = QtWidgets.QStatusBar(MainWindow)
+        self.statusbar.setObjectName("statusbar")
+        MainWindow.setStatusBar(self.statusbar)
+
+        self.retranslateUi(MainWindow)
+        QtCore.QMetaObject.connectSlotsByName(MainWindow)
+
+    def buttonPredict_clicked(self):
+        Sepal_width = self.textSepalWidth.toPlainText()  
+        Sepal_hight = self.textSepalHeight.toPlainText() 
+        Petal_width = self.textPetalWidth.toPlainText() 
+        Pepal_hight = self.textPetalHeight.toPlainText() 
+        new_data =[Sepal_width,Sepal_hight,Petal_width,Pepal_hight]
+        iris_class = model.predict([new_data]) 
+        if (iris_class==0): 
+            name="setosa" 
+        elif(iris_class==1): 
+            name ="versicolor" 
+        else: 
+            name="virginica"
+        self.textResult.setText(name)
+
+    def retranslateUi(self, MainWindow):
+        _translate = QtCore.QCoreApplication.translate
+        MainWindow.setWindowTitle(_translate("MainWindow", "+++ Test window title +++"))
+        self.label.setText(_translate("MainWindow", "Test ML model prediction app."))
+        self.label_2.setText(_translate("MainWindow", "Sepal Width"))
+        self.label_4.setText(_translate("MainWindow", "Petal Height"))
+        self.label_5.setText(_translate("MainWindow", "Petal Width"))
+        self.label_6.setText(_translate("MainWindow", "Sepal Hight"))
+        self.buttonPredict.setText(_translate("MainWindow", "Prediction"))
+        self.label_7.setText(_translate("MainWindow", "Result"))
+
+
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    MainWindow = QtWidgets.QMainWindow()
+    ui = Ui_MainWindow()
+    ui.setupUi(MainWindow)
+    MainWindow.show()
+    sys.exit(app.exec_())
